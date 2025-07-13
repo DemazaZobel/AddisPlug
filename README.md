@@ -90,30 +90,3 @@ MIT License © 2025 — Betelhem seleshi
 
 Created by Betelhem seleshi- bettyseleshit@gmail.com — feel free to reach out!
 
-
-
-
-<div
-              id="card"
-              className="" 
-            
-            >
-          <img src={logo} alt="Logo" className="h-30 mr-20" />
-
-            <div className="space-y-2 text-3xl text-navy">
-              <p>Plug In.</p>
-              <p className="text-amber-400 font-semibold">Power Up.</p>
-              <p>Drive On.</p>
-            </div>
-            <div className="mt-6 space-y-4 text-lg text-navy">
-              <p className="flex items-center gap-2">
-                <span className="text-green-400">⚡</span> Fast Chargers
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-green-400">⚡</span> Supports All EVs
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-green-400">⚡</span> Transparent Pricing
-              </p>
-            </div>
-          </div>
