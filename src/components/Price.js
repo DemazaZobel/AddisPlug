@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 export default function Price() {
-  const [activeTab, setActiveTab] = useState("stations");
-  const [menuOpen, setMenuOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState("services");
 
   const plans = [
     {
@@ -44,8 +43,8 @@ export default function Price() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
-      <div className="text-center mb-16">
+    <div className="max-w-6xl mx-auto px-4 ">
+      <div className="text-center mb-16 mt-20">
         <h3 className="text-3xl font-bold mb-3">Transparent Pricing</h3>
         <p className="text-secondary max-w-2xl mx-auto">
           Choose the plan that fits your charging and car care needs.

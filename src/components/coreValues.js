@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import parking from "../assets/parking.png";
 export default function CoreValues() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
@@ -35,62 +35,179 @@ export default function CoreValues() {
   ];
 
   return (
-    <div className="bg-light px-4 sm:px-6 lg:px-8 pb-20 mt-20 p-10">
+    <div className="bg-light px-4 sm:px-6 lg:px-8 pb-20 mb-20 p-10">
       <div className="max-w-7xl mx-auto">
-        {/* Core Values Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16 max-w-6xl mx-auto"
-        >
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Core Values</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-            {values.map((value, index) => (
-              <motion.div 
-                key={index}
-                whileHover={{ y: -5 }}
-                onHoverStart={() => setHoveredCard(index)}
-                onHoverEnd={() => setHoveredCard(null)}
-                className="relative overflow-hidden rounded-xl bg-white p-6 border border-gray-200 hover:border-green-300 transition-all duration-300 shadow-sm hover:shadow-md"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 ${hoveredCard === index ? 'opacity-100' : ''} transition-opacity duration-300`} />
-                <div className="relative z-10">
-                  <div className="bg-gradient-to-br from-green-500 to-teal-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 mx-auto shadow-md">
-                    {value.icon}
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 text-center">{value.title}</h4>
-                  <p className="text-gray-600 text-center">{value.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Parking Space Section - Dominant Image Edition */}
+<motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ 
+    duration: 0.7,
+    ease: [0.16, 0.77, 0.47, 0.97]  
+  }}
+  viewport={{ once: true, margin: "-50px" }}
+  className="flex flex-col lg:flex-row items-center gap-6 bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl p-10 lg:p-10 mb-40 overflow-hidden relative"
+>
+  {/* Glowing accent (adds depth) */}
+  <div className="absolute -right-32 -top-32 w-80 h-80 bg-blue-100 rounded-full filter blur-3xl opacity-30 z-0" />
+  
+  {/* BIGGER IMAGE - Now 60% width on desktop, full bleed on mobile */}
+  <motion.div
+    initial={{ scale: 0.98 }}
+    whileInView={{ scale: 1 }}
+    transition={{ delay: 0.2, duration: 0.5 }}
+    className="w-full lg:w-[60%] relative z-10"
+  >
+    <img 
+      src={parking}
+      alt="Luxurious EV Parking Space"
+      className="w-full rounded-2xl shadow-xl object-cover h-80 md:h-96 lg:h-[28rem] transform transition-all duration-500 hover:scale-[1.015]"
+    />
+    {/* Subtle overlay for depth */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl" />
+  </motion.div>
 
-        {/* Stats Section */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-24 bg-white rounded-2xl p-8 border border-gray-200 shadow-sm"
+    <div className="w-full lg:w-[40%] text-center lg:text-left relative z-10 space-y-5 lg:space-y-6">
+      <motion.h4 
+        initial={{ opacity: 0, x: -10 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4 }}
+        className="text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight"
+      >
+        Your EV Deserves <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400">Premium Parking</span>
+      </motion.h4>
+      
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="text-gray-600 text-lg lg:text-xl leading-relaxed"
+      >
+        Slide into our <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">spacious charging bays</span> designed for effortless access. No tight squeezes - just smooth arrivals and sensual charging experiences.
+      </motion.p>
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        className="pt-2"
+      >
+        <a href="#station">
+      <button className="px-7 py-3.5 bg-gradient-to-r from-green-400 to-teal-400 hover:bg-green-700 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95">
+        Find Nearby Stations →
+      </button>
+    </a>
+
+      </motion.div>
+    </div>
+  </motion.div>
+          {/* Core Values Section */}
+          <motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true, margin: "-50px" }}
+  className="mb-24 max-w-6xl mx-auto px-4"
+>
+  {/* Title with sexy gradient & subtle shine */}
+  <motion.h3 
+    initial={{ opacity: 0, y: 10 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.2 }}
+    className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-500"
+  >
+    Our <span >
+      Core Values
+    </span>
+  </motion.h3>
+
+  {/* Cards with 3D hover & liquid motion */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {values.map((value, index) => (
+      <motion.div 
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        whileHover={{ 
+          y: -8,
+          scale: 1.03,
+          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)"
+        }}
+        transition={{ 
+          type: "spring",
+          stiffness: 300,
+          damping: 15,
+          duration: 0.5
+        }}
+        className="relative group overflow-hidden rounded-2xl bg-white p-8 border border-gray-100 hover:border-green-200 transition-all duration-500 shadow-lg hover:shadow-xl"
+      >
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        
+        {/* Floating reflection effect */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400/30 to-teal-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+        <div className="relative z-10">
+          {/* Icon with floating glow */}
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            className="bg-gradient-to-br from-green-500 to-teal-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:shadow-green-200/50 transition-all duration-500"
+          >
+            <div className="text-white text-2xl">
+              {value.icon}
+            </div>
+          </motion.div>
+
+          <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-green-700 transition-colors duration-300">
+            {value.title}
+          </h4>
+          
+          <p className="text-gray-600 text-center group-hover:text-gray-800 transition-colors duration-300">
+            {value.description}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+<motion.div 
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, ease: "backOut" }}
+  viewport={{ once: true, margin: "-100px" }}
+  className="mt-32 bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 border border-gray-100 shadow-xl hover:shadow-2xl transition-shadow duration-500"
+>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    {[
+      { number: "10+", label: "Charging Ports" },
+      { number: "1k+", label: "EVs Charged" },
+      { number: "100+", label: "Tons CO₂ Saved" }
+    ].map((stat, index) => (
+      <motion.div 
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1 + 0.3 }}
+        whileHover={{ scale: 1.05 }}
+        className="p-8 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 hover:border-green-200 transition-all duration-300"
+      >
+        {/* Animated gradient number */}
+        <motion.p 
+          className="text-6xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-500"
+          whileHover={{ scale: 1.1 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              { number: "10+", label: "Charging Ports" },
-              { number: "1k+", label: "EVs Charged" },
-              { number: "100+", label: "Tons CO₂ Saved" }
-            ].map((stat, index) => (
-              <div key={index} className="p-6">
-                <p className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-500 mb-2">
-                  {stat.number}
-                </p>
-                <p className="text-gray-600 text-lg">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+          {stat.number}
+        </motion.p>
+        
+        {/* Label with subtle underline effect */}
+        <p className="text-gray-600 text-lg relative inline-block">
+          {stat.label}
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-500"></span>
+        </p>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
       </div>
     </div>
   );

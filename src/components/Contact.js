@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
-  const [activeTab, setActiveTab] = useState("stations");
+  const [activeTab, setActiveTab] = useState("contact");
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);

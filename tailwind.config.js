@@ -9,7 +9,9 @@ module.exports = {
       poppins: ['Poppins', 'sans-serif'],
     },
     colors: {
-      primary: '#112639',       // Navy Blue
+      primary: '#112639', // Navy Blue
+      lightPrimary: '#4F94A8',// Light Blue
+      darkPrimary: '#0B101E',     // Dark Navy 
       secondary: '#E99522',     // Orange
       accent: '#487249',        // Olive Green
       light: '#FAF6F6',         // Off White

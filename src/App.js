@@ -22,7 +22,7 @@ export default function Home() {
       <section id="home" className="relative  text-center overflow-hidden">
         <Hero/>
       </section>
-      <section id="services" className="py-20 px-4 bg-light">
+      <section id="services" className="py-20 px-4 bg-light ">
         <Price />
       </section>
       <section id="station" className=" bg-light">

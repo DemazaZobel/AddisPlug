@@ -24,7 +24,7 @@ export default function Map() {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const [googleInstance, setGoogleInstance] = useState(null);
   const [loadingLocation, setLoadingLocation] = useState(true);
-
+  const [activeTab, setActiveTab] = useState("station");
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
   // Get user location
@@ -58,7 +58,7 @@ export default function Map() {
   };
 
   return (
-    <section className="relative py-20 bg-light">
+    <div className="relative py-20 bg-light">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 animate-fadeIn">
           Find a Charging Station
@@ -150,7 +150,7 @@ export default function Map() {
   target="_blank"
   rel="noopener noreferrer"
   className=" m-[-10px]
-    bg-primary hover:bg-green-600 text-white 
+    bg-accent hover:bg-green-600 text-white 
     text-sm px-4 py-2 rounded-full shadow-md animate-bounce 
     sm:px-6 sm:py-3 sm:text-base
     flex items-center justify-center
@@ -197,6 +197,6 @@ export default function Map() {
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 }

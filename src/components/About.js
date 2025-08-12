@@ -1,9 +1,25 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import gear from "../assets/chargingGear.png";
+import gear1 from "../assets/Scene 33.png";
+import gear2 from "../assets/Scene 36.png";
+import gear3 from "../assets/Scene 39.png";
+import gear4 from "../assets/Scene 43.png";
+import gear5 from "../assets/Scene 4_1.png";
 import logo from "../assets/logo.png";
 
+const images = [gear1, gear2, gear3, gear4, gear5];
 export default function AboutIntro() {
+  const [activeTab, setActiveTab] = useState("about");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative overflow-hidden bg-light py-20 px-4 sm:px-6 lg:px-8">
       {/* Decorative elements */}
@@ -44,10 +60,11 @@ export default function AboutIntro() {
             </p>
             <div className="space-y-5">
               {[
-                "Deploy charging stations in Addis Ababa",
+                "Deploy charging station in Addis Ababa",
                 "Support Clean Energy by Reducing carbon emissions ",
                 "Make EV charging accessible for all Electric Vechile brands",
-                "Imporve Addis Ababa's Air Quality"
+                "Provide washing options Both Manual or Automatic",
+                "Offer affordable and transparent pricing",
               ].map((item, index) => (
                 <div key={index} className="flex items-start group">
                   <div className="flex-shrink-0 bg-gradient-to-br from-green-500 to-teal-500 p-2 rounded-lg group-hover:scale-110 transition-transform shadow-md">
@@ -70,11 +87,17 @@ export default function AboutIntro() {
             viewport={{ once: true }}
             className="order-1 lg:order-2 relative rounded-2xl overflow-hidden h-[500px] shadow-lg border border-gray-200"
           >
-            <img
-              className="w-full h-full object-cover"
-              src={gear}
-              alt="EV charging station"
-            />
+             <div className="w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden relative rounded-xl">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`carousel-${index}`}
+                  className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === currentIndex ? "opacity-100 z-10" : "opacity-0"
+                  }`}
+                />
+              ))}</div>
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/70 to-transparent">
               <h4 className="text-white text-2xl font-semibold">
                 <img className="w-20 h-20" src={logo} alt="AddisPlug logo" />
