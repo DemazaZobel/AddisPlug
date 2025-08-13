@@ -42,7 +42,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 w-[85%] md:w-[500px] bg-white/80 backdrop-blur-md py-3 px-4 sm:px-6 z-[999] shadow-sm rounded-2xl sm:rounded-3xl h-18 p-5">
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[85%] md:w-[600px] bg-white/80 backdrop-blur-md  px-4 sm:px-6 z-[999] shadow-sm rounded-2xl sm:rounded-3xl h-14 ">
       <div className="flex items-center justify-center relative p-2">
         {/* Navigation for all screen sizes */}
         <nav className="flex space-x-4 sm:space-x-6 font-poppins">

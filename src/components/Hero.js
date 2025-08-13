@@ -52,49 +52,50 @@ export default function AddisPlugLanding() {
       </div>
 
       {/* Logo (top left corner) */}
-      <div className="hidden lg:block absolute top-4 left-16 w-40 lg:w-60 z-10">
+      <div className="hidden lg:block absolute top-12 left-16 w-32 lg:w-48 z-10">
         <img src={logo} alt="Addis Plug Logo" className="w-full" />
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col items-center text-center w-full px-4 lg:px-0 lg:mt-20 z-10">
+      <div className="flex flex-col items-center text-center w-full px-4 lg:px-0 lg:mt-8 sm:mt-20 z-10">
         <div className="relative group z-10">
           <img 
             src={logo} 
             alt="Addis Plug Logo" 
-            className="w-[250px] md:w-[400px] lg:w-[550px] mb-4 lg:mb-[-130px] lg:mt-2 md:mt-20 m-20 z-10 relative  " 
+            className="sm:w-[150px] md:w-[500px] lg:w-[400px] sm:mb-4 md:-mb-20 lg:mb-[-150px] lg:mt-2 md:mt-0 sm:mt-20  z-10 relative  " 
           />
         </div>
 
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-poppins tracking-wider px-4 max-w-3xl">
+        <h1 className="text-xl md:text-2xl lg:text-2xl font-poppins tracking-wider px-4 max-w-2xl lg:mt-20 md:mt-20 ">
           Ethiopians most <span className="text-green-400">advanced</span> EV station
         </h1>
 
         {/* Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center px-4">
-          <a
-            href="#services"
-            className="bg-gradient-to-r from-green-400 to-teal-400 tracking-wider text-lg md:text-xl font-poppins hover:bg-green-700 px-8 sm:px-12 py-4 sm:py-6 sm:w-20text-white rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
-          >
-            Our Services →
-          </a>
-          <a
-            href="#station"
-            className="bg-accent/80 hover:bg-green-400 px-8 sm:px-12 py-4 sm:py-6 text-white font-poppins text-lg md:text-xl rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
-          >
-            Find Station
-          </a>
-          <a
-            href="#cards"
-            className="bg-accent/80 hover:bg-green-400 px-8 sm:px-12 py-4 sm:py-6 text-white font-poppins text-lg md:text-xl rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
-          >
-            How to Charge
-          </a>
-        </div>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center px-2">
+  <a
+    href="#services"
+    className="bg-gradient-to-r from-green-400 to-teal-400 tracking-wider text-base md:text-lg font-poppins hover:bg-green-700 px-6 sm:px-8 py-3 sm:py-4 text-white rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
+  >
+    Our Services →
+  </a>
+  <a
+    href="#station"
+    className="bg-accent/80 hover:bg-green-400 px-6 sm:px-8 py-3 sm:py-4 text-white font-poppins text-base md:text-lg rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
+  >
+    Find Station
+  </a>
+  <a
+    href="#cards"
+    className="bg-accent/80 hover:bg-green-400 px-6 sm:px-8 py-3 sm:py-4 text-white font-poppins text-base md:text-lg rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
+  >
+    How to Charge
+  </a>
+</div>
+
       </div>
 
       {/* Side Features */}
-      <div className="hidden lg:flex absolute left-16 top-[400px] flex-col gap-4 text-lg text-justify font-poppins tracking-wider z-10">
+      <div className="hidden lg:flex absolute left-16 top-[300px] flex-col gap-4 text-md text-justify font-poppins  z-10">
         <p className="hover:text-green-400 transition-colors duration-300">⚡ Fast Charging</p>
         <p className="hover:text-green-400 transition-colors duration-300">⚡ Support All EVs</p>
         <p className="hover:text-green-400 transition-colors duration-300">⚡ Transparent Pricing</p>

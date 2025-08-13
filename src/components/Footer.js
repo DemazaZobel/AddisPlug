@@ -49,8 +49,8 @@ export default function Footer() {
 
       {/* Contact Info */}
       <div className="mb-4 text-secondary mt-4">
-        <p>Email: contact@yourcompany.com</p>
-        <p>Phone: +251 912 345 678</p>
+        <p>Email: contact@addisplug.com</p>
+        <p>Phone: +251 994747575</p>
       </div>
 
       {/* Copyright */}
