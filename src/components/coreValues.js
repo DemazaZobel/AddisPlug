@@ -37,6 +37,14 @@ export default function CoreValues() {
   return (
     <div className="bg-light px-4 sm:px-6 lg:px-8 pb-20 mb-20 p-10">
       <div className="max-w-7xl mx-auto">
+      <div className="mb-12">
+      <h1 className="text-lightPrimary text-3xl font-bold relative inline-block group">
+  Parking Service
+  <span className="absolute left-0 -bottom-1 h-1 w-0 bg-gradient-to-r from-secondary to-accent rounded-full transition-all duration-500 group-hover:w-full"></span>
+</h1>
+
+
+      </div>
         {/* Parking Space Section - Dominant Image Edition */}
 <motion.div 
   initial={{ opacity: 0, y: 20 }}
@@ -169,45 +177,8 @@ export default function CoreValues() {
       </motion.div>
     ))}
   </div>
-</motion.div>
-<motion.div 
-  initial={{ opacity: 0, scale: 0.95 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, ease: "backOut" }}
-  viewport={{ once: true, margin: "-100px" }}
-  className="mt-32 bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 border border-gray-100 shadow-xl hover:shadow-2xl transition-shadow duration-500"
->
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-    {[
-      { number: "10+", label: "Charging Ports" },
-      { number: "1k+", label: "EVs Charged" },
-      { number: "100+", label: "Tons CO₂ Saved" }
-    ].map((stat, index) => (
-      <motion.div 
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 + 0.3 }}
-        whileHover={{ scale: 1.05 }}
-        className="p-8 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100 hover:border-green-200 transition-all duration-300"
-      >
-        {/* Animated gradient number */}
-        <motion.p 
-          className="text-6xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-500"
-          whileHover={{ scale: 1.1 }}
-        >
-          {stat.number}
-        </motion.p>
-        
-        {/* Label with subtle underline effect */}
-        <p className="text-gray-600 text-lg relative inline-block">
-          {stat.label}
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-500"></span>
-        </p>
-      </motion.div>
-    ))}
-  </div>
-</motion.div>
+          </motion.div>
+
       </div>
     </div>
   );

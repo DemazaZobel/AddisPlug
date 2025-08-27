@@ -4,15 +4,23 @@ import plug from "../assets/charge.png";
 import location from "../assets/location.png";
 import washManual from "../assets/manual.png";
 import washMachine from "../assets/automatic.png";
-import carWashMain from "../assets/Scene 15.png"; // ✅ New image of a car being washed
+import carWashMain from "../assets/Scene 15.png"; 
 
 export default function Cards() {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="max-w-6xl mx-auto px-4 m-40 ">
+    <div className="max-w-6xl mx-auto px-4 m-40">
       {/* EV Charging Section */}
       <div className="mb-16 mt-10">
-        <h3 className="text-3xl font-bold mb-4">How It Works</h3>
-        <p className="text-secondary max-w-2xl mx-auto text-center">
+        <h1 className="text-3xl font-bold text-lightPrimary">Charging Service</h1>
+        <br />
+        <p className="text-secondary max-w-2xl mx-auto text-center -mb-8">
           Charge your electric vehicle in just three simple steps
         </p>
       </div>
@@ -20,19 +28,20 @@ export default function Cards() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-40">
         {[
           {
-            icon: <img className="rounded-xl h-16 w-16" src={location} alt="Locate" />,
+            icon: <img className="rounded-xl h-10 w-10" src={location} alt="Locate" />,
             title: "Step 1: Locate",
             desc: "Find AddisPlug charging station with our real-time map",
             bg: "from-green-200 to-teal-200",
+            sectionId: "station", // <-- scroll to this section
           },
           {
-            icon: <img className="rounded-xl h-16 w-16" src={plug} alt="Plug In" />,
+            icon: <img className="rounded-xl h-10 w-10" src={plug} alt="Plug In" />,
             title: "Step 2: Plug In",
             desc: "Connect your EV using our charging ports",
             bg: "from-green-200 to-teal-200",
           },
           {
-            icon: <img className="rounded-xl h-16 w-16" src={telebirr} alt="Pay" />,
+            icon: <img className="rounded-xl h-10 w-10" src={telebirr} alt="Pay" />,
             title: "Step 3: Charge & Pay",
             desc: "Monitor your session and pay seamlessly via Telebirr app",
             bg: "from-green-200 to-teal-200",
@@ -40,7 +49,12 @@ export default function Cards() {
         ].map((step, index) => (
           <div
             key={index}
-            className="group perspective-1000"
+            className="group perspective-1000 cursor-pointer"
+            onClick={() => {
+              if (step.sectionId) {
+                scrollToSection(step.sectionId); // scroll instead of navigate
+              }
+            }}
             onMouseEnter={(e) => {
               e.currentTarget.querySelector(".card-inner").style.transform =
                 "rotateY(15deg)";
@@ -68,12 +82,11 @@ export default function Cards() {
 
       {/* Car Washing Section */}
       <div className="top-10">
-        <h3 className="text-3xl font-bold mb-4">Car Washing Services</h3>
+        <h3 className="text-3xl font-bold mb-4 text-lightPrimary">Washing Services</h3>
         <p className="text-secondary max-w-2xl mx-auto text-center mb-6">
           Keep your vehicle clean while it charges. Choose between manual or automated washing options.
         </p>
 
-        {/* Image of a car being washed */}
         <div className="w-full mb-10">
           <img
             src={carWashMain}

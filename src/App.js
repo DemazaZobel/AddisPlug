@@ -9,6 +9,9 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import About from './components/About';
 import CoreValues from './components/coreValues';
+import { i } from 'framer-motion/client';
+import Maintain from './components/Maintain';
+import Rental from './components/Rental';
 export default function Home() {
   const [activeTab, setActiveTab] = useState('stations');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,18 +32,22 @@ export default function Home() {
         <Map />
       </section>
      
-
+     
       {/* How It Works with Animated Cards */}
       <section id="cards" className="p-10 text-center bg-light flex flex-col gap-10">
         <Cards />
+        <Maintain />
         <CoreValues />
       </section>
+    
       <section id="about" className=" relative bg-light">
        <About />
       </section>
       
 
-      
+      <section id="rental" className="py-20 px-4 bg-light">
+        <Rental />
+      </section>
       
 
       {/* Testimonials */}

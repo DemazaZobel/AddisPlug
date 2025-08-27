@@ -5,6 +5,7 @@ import dArrow from "../assets/downArrow.png";
 export default function AddisPlugLanding() {
   return (
     <div className="min-h-screen bg-cover bg-center text-white flex flex-col items-center font-sans bg-gradient-to-b from-darkPrimary to-lightPrimary relative overflow-hidden">
+      
       {/* Animated Radiation Effect - Orange Rectangles */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/30 via-gray-900 to-gray-950 animate-pulse-slow" />
@@ -62,40 +63,46 @@ export default function AddisPlugLanding() {
           <img 
             src={logo} 
             alt="Addis Plug Logo" 
-            className="sm:w-[150px] md:w-[500px] lg:w-[400px] sm:mb-4 md:-mb-20 lg:mb-[-150px] lg:mt-2 md:mt-0 sm:mt-20  z-10 relative  " 
+            className="sm:w-[120px] md:w-[500px] lg:w-[400px] sm:mb-4 md:-mb-20 lg:mb-[-150px] lg:mt-2 md:mt-0 sm:mt-20 z-10 relative" 
           />
         </div>
 
         <h1 className="text-xl md:text-2xl lg:text-2xl font-poppins tracking-wider px-4 max-w-2xl lg:mt-20 md:mt-20 ">
-          Ethiopians most <span className="text-green-400">advanced</span> EV station
+          Ethiopia's most <span className="text-green-400">advanced</span> EV station.
         </h1>
 
         {/* Buttons */}
         <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto justify-center px-2">
-  <a
-    href="#services"
-    className="bg-gradient-to-r from-green-400 to-teal-400 tracking-wider text-base md:text-lg font-poppins hover:bg-green-700 px-6 sm:px-8 py-3 sm:py-4 text-white rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
-  >
-    Our Services →
-  </a>
-  <a
-    href="#station"
-    className="bg-accent/80 hover:bg-green-400 px-6 sm:px-8 py-3 sm:py-4 text-white font-poppins text-base md:text-lg rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
-  >
-    Find Station
-  </a>
-  <a
-    href="#cards"
-    className="bg-accent/80 hover:bg-green-400 px-6 sm:px-8 py-3 sm:py-4 text-white font-poppins text-base md:text-lg rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
-  >
-    How to Charge
-  </a>
-</div>
+          <a
+            href="#services"
+            className="bg-gradient-to-r from-green-400 to-teal-400 tracking-wider text-base md:text-lg font-poppins hover:bg-green-700 px-6 sm:px-8 py-3 sm:py-4 text-white rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-green-400/30 text-center"
+          >
+            Our Services →
+          </a>
 
+          {/* Glowing Border Buttons */}
+          {["#station", "#cards"].map((href, idx) => (
+  <a
+    key={idx}
+    href={href}
+    className="relative px-6 sm:px-8 py-3 sm:py-4 text-white font-poppins text-base md:text-lg rounded-full border-2 border-green-400 text-center
+               bg-gray-900
+               hover:border-white
+               hover:text-secondary
+               before:absolute before:-inset-1 before:rounded-full before:bg-green-400/40 before:blur-xl before:opacity-70
+               before:animate-[pulse_2s_ease-in-out_infinite]
+               transition-all duration-300 hover:border-green-300 hover:before:opacity-100 hover:before:animate-[pulse_1s_ease-in-out_infinite]"
+  >
+    {idx === 0 ? "Find Station" : "How to Charge"}
+  </a>
+))}
+
+
+        </div>
       </div>
 
       {/* Side Features */}
-      <div className="hidden lg:flex absolute left-16 top-[300px] flex-col gap-4 text-md text-justify font-poppins  z-10">
+      <div className="hidden lg:flex absolute left-16 top-[300px] flex-col gap-4 text-md text-justify font-poppins z-10">
         <p className="hover:text-green-400 transition-colors duration-300">⚡ Fast Charging</p>
         <p className="hover:text-green-400 transition-colors duration-300">⚡ Support All EVs</p>
         <p className="hover:text-green-400 transition-colors duration-300">⚡ Transparent Pricing</p>
@@ -108,8 +115,8 @@ export default function AddisPlugLanding() {
         <p>⚡ Transparent Pricing</p>
       </div>
 
+      {/* Scroll Down Footer */}
       <div className="mt-auto mb-8 lg:mb-12 text-center w-full px-4 z-10">
-        {/* Footer Slogan */}
         <div 
           className="w-12 h-20 mx-auto mt-4 bg-secondary rounded-full mb-4 flex items-center justify-center animate-bounce cursor-pointer"
           onClick={() => document.getElementById("services").scrollIntoView({ behavior: "smooth" })}
@@ -120,7 +127,6 @@ export default function AddisPlugLanding() {
           Plug In. <span className="text-orange-500 animate-pulse">Power Up.</span> Drive On
         </p>
       </div>
-      
     </div>
   );
 }

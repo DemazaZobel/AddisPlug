@@ -61,10 +61,10 @@ export default function Map() {
     <div className="relative py-20 bg-light">
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 animate-fadeIn">
-          Find a Charging Station
+          Find Our EV Station
         </h2>
         <p className="text-lg text-secondary max-w-xl mx-auto animate-fadeIn delay-100">
-          Locate available AddisPlug charging Ports near you.
+          Locate available AddisPlug EV station near you.
         </p>
       </div>
 
