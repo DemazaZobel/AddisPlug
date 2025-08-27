@@ -35,7 +35,7 @@ export default function CoreValues() {
   ];
 
   return (
-    <div className="bg-light px-4 sm:px-6 lg:px-8 pb-20 mb-20 p-10">
+    <div className="bg-light px-4 sm:px-6 lg:px-8 pb-20 mb-20 p-10 sm:-m-20">
       <div className="max-w-7xl mx-auto">
       <div className="mb-12">
       <h1 className="text-lightPrimary text-3xl font-bold relative inline-block group">
@@ -46,7 +46,7 @@ export default function CoreValues() {
 
       </div>
         {/* Parking Space Section - Dominant Image Edition */}
-<motion.div 
+        <motion.div 
   initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ 
@@ -54,61 +54,63 @@ export default function CoreValues() {
     ease: [0.16, 0.77, 0.47, 0.97]  
   }}
   viewport={{ once: true, margin: "-50px" }}
-  className="flex flex-col lg:flex-row items-center gap-6 bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl p-10 lg:p-10 mb-40 overflow-hidden relative"
+  className="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl p-2 lg:p-10 mb-16 lg:mb-40 overflow-hidden w-full"
 >
-  {/* Glowing accent (adds depth) */}
-  <div className="absolute -right-32 -top-32 w-80 h-80 bg-blue-100 rounded-full filter blur-3xl opacity-30 z-0" />
-  
-  {/* BIGGER IMAGE - Now 60% width on desktop, full bleed on mobile */}
+  {/* Glowing accent */}
+  <div className="absolute -right-24 -top-24 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 z-0" />
+
+  {/* Image */}
   <motion.div
     initial={{ scale: 0.98 }}
     whileInView={{ scale: 1 }}
     transition={{ delay: 0.2, duration: 0.5 }}
-    className="w-full lg:w-[60%] relative z-10"
+    className="w-full lg:w-[65%] relative z-10"
   >
     <img 
       src={parking}
       alt="Luxurious EV Parking Space"
-      className="w-full rounded-2xl shadow-xl object-cover h-80 md:h-96 lg:h-[28rem] transform transition-all duration-500 hover:scale-[1.015]"
+      className="w-full rounded-2xl shadow-xl object-cover h-72 md:h-96 lg:h-[28rem] transform transition-all duration-500 hover:scale-[1.02]"
     />
-    {/* Subtle overlay for depth */}
     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl" />
   </motion.div>
 
-    <div className="w-full lg:w-[40%] text-center lg:text-left relative z-10 space-y-5 lg:space-y-6">
-      <motion.h4 
-        initial={{ opacity: 0, x: -10 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.4 }}
-        className="text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight"
-      >
-        Your EV Deserves <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400">Premium Parking</span>
-      </motion.h4>
-      
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="text-gray-600 text-lg lg:text-xl leading-relaxed"
-      >
-        Slide into our <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">spacious charging bays</span> designed for effortless access. No tight squeezes - just smooth arrivals and sensual charging experiences.
-      </motion.p>
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="pt-2"
-      >
-        <a href="#station">
-      <button className="px-7 py-3.5 bg-gradient-to-r from-green-400 to-teal-400 hover:bg-green-700 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95">
-        Find Nearby Stations →
-      </button>
-    </a>
+  {/* Text Content */}
+  <div className="w-full lg:w-[35%] text-center lg:text-left relative z-10 space-y-4 lg:space-y-6 px-2 lg:px-0">
+    <motion.h4 
+      initial={{ opacity: 0, x: -10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.4 }}
+      className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight"
+    >
+      Your EV Deserves <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-400">Premium Parking</span>
+    </motion.h4>
+    
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.6 }}
+      className="text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed"
+    >
+      Slide into our <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">spacious charging bays</span> designed for effortless access. No tight squeezes - just smooth arrivals and seamless charging experiences.
+    </motion.p>
+    
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.8 }}
+      className="pt-2"
+    >
+      <a href="#station">
+        <button className="px-6 md:px-7 py-3.5 bg-gradient-to-r from-green-400 to-teal-400 hover:bg-green-700 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95">
+          Find Nearby Stations →
+        </button>
+      </a>
+    </motion.div>
+  </div>
+</motion.div>
 
-      </motion.div>
-    </div>
-  </motion.div>
+
+
           {/* Core Values Section */}
           <motion.div 
   initial={{ opacity: 0, y: 20 }}

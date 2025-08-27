@@ -9,64 +9,66 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import About from './components/About';
 import CoreValues from './components/coreValues';
-import { i } from 'framer-motion/client';
 import Maintain from './components/Maintain';
 import Rental from './components/Rental';
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState('stations');
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className=" ">
-      {/* Luxury Navbar with Mobile Menu */}
-      <Header/>
+    <div className="w-full overflow-x-hidden relative">
+      {/* Fixed Header */}
+      <header className="lg:mt-[-200px] fixed top-0 left-0 w-full z-50 bg-light shadow-md">
+        <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </header>
 
-      {/* Hero Section with Animated Gradient */}
-      <section id="home" className="relative  text-center overflow-hidden">
-        <Hero/>
+      
+
+      {/* Hero Section */}
+      <section id="home" className="relative w-full text-center overflow-hidden">
+        <Hero />
       </section>
-      <section id="services" className="py-20 px-4 bg-light ">
+
+      {/* Price Section */}
+      <section id="services" className="py-20 px-2 md:px-4 lg:px-20 bg-light w-full">
         <Price />
       </section>
-      <section id="station" className=" bg-light">
+
+      {/* Map Section */}
+      <section id="station" className="bg-light w-full px-2 md:px-4 lg:px-20">
         <Map />
       </section>
-     
-     
-      {/* How It Works with Animated Cards */}
-      <section id="cards" className="p-10 text-center bg-light flex flex-col gap-10">
+
+      {/* Cards, Maintain, Core Values */}
+      <section id="cards" className="flex flex-col gap-10 px-2 md:px-4 lg:px-20 py-10 text-center bg-light w-full">
         <Cards />
         <Maintain />
         <CoreValues />
       </section>
-    
-      <section id="about" className=" relative bg-light">
-       <About />
-      </section>
-      
 
-      <section id="rental" className="py-20 px-4 bg-light">
+      {/* About Section */}
+      <section id="about" className="relative bg-light w-full px-2 md:px-4 lg:px-20 py-10">
+        <About />
+      </section>
+
+      {/* Rental Section */}
+      <section id="rental" className="py-20 px-2 md:px-4 lg:px-20 bg-light w-full">
         <Rental />
       </section>
-      
 
-      {/* Testimonials */}
-      <section className="py-20 px-4 bg-light">
+      {/* Testimonials Section */}
+      <section className="py-20 px-2 md:px-4 lg:px-20 bg-light w-full">
         <Testimonials />
       </section>
 
-      {/* Contact Section with Floating Form */}
-      <section id="contact" className="py-20 px-4 relative">
-       <Contact />
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-2 md:px-4 lg:px-20 relative w-full">
+        <Contact />
       </section>
-      
 
-      
-
+      {/* Footer */}
       <Footer />
-
-      
-      
     </div>
   );
 }

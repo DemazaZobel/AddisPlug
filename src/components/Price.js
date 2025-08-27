@@ -6,7 +6,7 @@ export default function Price() {
   const plans = [
     {
       name: "Economy",
-      price: "500",
+      price: "$",
       desc: "Perfect for everyday EV users looking for affordable and reliable service.",
       features: [
         "Standard Charging",
@@ -19,7 +19,7 @@ export default function Price() {
     },
     {
       name: "Business",
-      price: "1000",
+      price: "$$",
       desc: "Enhanced service for professionals and frequent drivers.",
       features: [
         "Fast Charging",
@@ -32,7 +32,7 @@ export default function Price() {
     },
     {
       name: "VIP",
-      price: "2500",
+      price: "$$$",
       desc: "Premium hands-off experience for our most exclusive clients.",
       features: [
         "VIP Fast Charging",

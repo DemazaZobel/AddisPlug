@@ -94,7 +94,7 @@ export default function AboutIntro() {
                   src={img}
                   alt={`carousel-${index}`}
                   className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                    index === currentIndex ? "opacity-100 z-10" : "opacity-0"
+                    index === currentIndex ? "opacity-100 z-100" : "opacity-0"
                   }`}
                 />
               ))}</div>
