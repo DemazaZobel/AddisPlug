@@ -21,7 +21,7 @@ export default function AboutIntro() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-light py-20 px-4 sm:px-6 lg:px-8">
+    <div className="relative overflow-hidden bg-light py-20 px-4 sm:px-6 lg:px-8 -mt-32">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute top-0 right-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
@@ -41,8 +41,7 @@ export default function AboutIntro() {
             Powering Ethiopia's <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-500">Electric Future</span>
           </h2>
           <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
-            AddisPlug is revolutionizing transportation with reliable, accessible charging solutions in Addis Ababa.
-          </p>
+          AddisPlug is revolutionizing transportation with reliable, accessible EV charging, washing, and maintenance solutions in Addis Ababa.          </p>
         </motion.div>
 
         {/* Mission Section */}
@@ -56,15 +55,15 @@ export default function AboutIntro() {
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-8">Our Mission</h3>
             <p className="text-gray-600 mb-8 text-lg">
-              To accelerate Addis Ababa's transition to sustainable transportation by building the city's most reliable EV charging Station.
+              To accelerate Addis Ababa's transition to sustainable transportation by building the city's most reliable EV Station.
             </p>
             <div className="space-y-5">
-              {[
-                "Deploy charging station in Addis Ababa",
-                "Support Clean Energy by Reducing carbon emissions ",
-                "Make EV charging accessible for all Electric Vechile brands",
-                "Provide washing options Both Manual or Automatic",
-                "Offer affordable and transparent pricing",
+              {[ "Deploy multi-service EV stations in Addis Ababa",
+                "Support clean energy by reducing carbon emissions",
+                "Provide reliable charging for all electric vehicle brands",
+                "Offer washing services — both manual and automatic",
+                "Include maintenance and quick service options",
+                "Ensure affordable and transparent pricing"
               ].map((item, index) => (
                 <div key={index} className="flex items-start group">
                   <div className="flex-shrink-0 bg-gradient-to-br from-green-500 to-teal-500 p-2 rounded-lg group-hover:scale-110 transition-transform shadow-md">

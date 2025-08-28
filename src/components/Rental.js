@@ -1,20 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "emailjs-com";
-import groundFloor from "../assets/ground.png";
-import firstFloor from "../assets/floor2.png";
-import secondFloor from "../assets/floor3.png";
-import thirdFloor from "../assets/floor4.png";
-import fourthFloor from "../assets/floor5.jpeg";
-import fifthFloor from "../assets/floor1.png";
+import groundFloor from "../assets/GF FINAL-01.jpg";
+import firstFloor from "../assets/floor1.jpg";
+import secondFloor from "../assets/floor2.jpg";
+import semibasement from "../assets/semibasement.jpg";
+
 
 export default function ShopRentalSection() {
   const floors = [
-    { name: "Ground Floor", img: groundFloor, codes: ["G1", "G2", "G3", "G4", "G5"] },
-    { name: "1st Floor", img: firstFloor, codes: ["1A", "1B", "1C", "1D", "1E"] },
-    { name: "2nd Floor", img: secondFloor, codes: ["2A", "2B", "2C", "2D", "2E"] },
-    { name: "3rd Floor", img: thirdFloor, codes: ["3A", "3B", "3C", "3D", "3E"] },
-    { name: "4th Floor", img: fourthFloor, codes: ["4A", "4B", "4C", "4D", "4E"] },
-    { name: "5th Floor", img: fifthFloor, codes: ["5A", "5B", "5C", "5D", "5E"] },
+    { name: "Ground Floor", img: groundFloor, codes: ["GF-R1", "GE-R2"] },
+    { name: "1st Floor", img: firstFloor, codes: ["FF-R1", "FF-R2"] },
+    { name: "2nd Floor", img: secondFloor, codes: ["SF-R1"] },
+    { name: "Semi Basement", img: semibasement, codes: ["SB-R1", "SB-R2", "SB-R3"] },
+    
   ];
 
   const [selectedFloor, setSelectedFloor] = useState(floors[0]);
@@ -114,7 +112,7 @@ Additional Message: ${optionalMessage}
         </p>
         <button
           onClick={() => setIsModalOpen(true)}
-          className="bg-secondary text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-600 transition-all duration-300"
+          className="bg-secondary text-white font-semibold py-3 px-6 rounded-full hover:bg-accent transition-all duration-300"
         >
           Fill Out Rental Form
         </button>
@@ -174,7 +172,7 @@ Additional Message: ${optionalMessage}
               <button
                 type="submit"
                 disabled={loading}
-                className={`bg-secondary text-white font-semibold py-3 rounded-full hover:bg-blue-600 transition-all duration-300 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                className={`bg-secondary text-white font-semibold py-3 rounded-full hover:bg-green-500 transition-all duration-300 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
               >
                 {loading ? "Sending..." : "Submit Rental Request"}
               </button>

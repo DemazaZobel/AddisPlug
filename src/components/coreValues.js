@@ -54,7 +54,7 @@ export default function CoreValues() {
     ease: [0.16, 0.77, 0.47, 0.97]  
   }}
   viewport={{ once: true, margin: "-50px" }}
-  className="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl p-2 lg:p-10 mb-16 lg:mb-40 overflow-hidden w-full"
+  className="flex flex-col lg:flex-row items-center gap-2 lg:gap-6 bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl p-4 lg:p-10 mb-16 lg:mb-40 overflow-hidden w-full"
 >
   {/* Glowing accent */}
   <div className="absolute -right-24 -top-24 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 z-0" />
@@ -91,7 +91,7 @@ export default function CoreValues() {
       transition={{ delay: 0.6 }}
       className="text-gray-600 text-base md:text-lg lg:text-xl leading-relaxed"
     >
-      Slide into our <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">spacious charging bays</span> designed for effortless access. No tight squeezes - just smooth arrivals and seamless charging experiences.
+      Slide into our <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-400">spacious EV station</span> designed for effortless access. No tight squeezes - just smooth arrivals and seamless  experiences.
     </motion.p>
     
     <motion.div
@@ -132,7 +132,7 @@ export default function CoreValues() {
   </motion.h3>
 
   {/* Cards with 3D hover & liquid motion */}
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
     {values.map((value, index) => (
       <motion.div 
         key={index}
